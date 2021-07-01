@@ -12,7 +12,12 @@ function App() {
 
   useEffect(() => {
     filteredHandler();
+    saveLocalWishes();
   }, [wishes, status]);
+
+  useEffect(() => {
+    getLocalWishes();
+  }, [])
 
   const filteredHandler = () => {
     switch (status) {
@@ -25,6 +30,19 @@ function App() {
       default:
         setFilteredWishes(wishes);
         break;
+    }
+  };
+
+  //save local
+  const saveLocalWishes = () => {
+    localStorage.setItem("wishes",JSON.stringify(wishes));
+  };
+  const getLocalWishes = () => {
+    if(localStorage.getItem("wishes") === null){
+      localStorage.setItem("wishes",JSON.stringify([]));
+    }else{
+      let wishLocal = JSON.parse(localStorage.getItem("wishes"));
+      setWishes(wishLocal);
     }
   };
 

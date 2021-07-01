@@ -1,5 +1,5 @@
 import React from "react";
-import uuid from "uuid";
+import nextId from "react-id-generator";
 
 const WishForm = ({setInput, wishes, setWishes, input, setStatus}) => {
 
@@ -11,7 +11,7 @@ const WishForm = ({setInput, wishes, setWishes, input, setStatus}) => {
     const submitWishHandler = (e) => {
         e.preventDefault();
         setWishes([
-            ...wishes, {text: input, completed: false, id: uuid.v4()}
+            ...wishes, {text: input, completed: false, id: nextId()}
         ]);
         setInput("");
     };
