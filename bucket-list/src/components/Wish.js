@@ -21,7 +21,7 @@ const Wish = ({ wishes, setWishes, wish }) => {
             <button onClick={completeHandler} className="complete-btn">
                 <i className="fas fa-check"></i>
             </button>
-            <li className="wish-item">{wish.text}</li>
+            <li className={`wish-item  ${wish.completed ? "completed" : ""}`}>{wish.text}</li>
             <button onClick={deleteHandler} className="trash-btn">
                 <i className="fas fa-trash"></i>
             </button>

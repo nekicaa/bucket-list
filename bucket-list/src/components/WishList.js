@@ -1,11 +1,11 @@
 import React from "react";
 import Wish from "./Wish";
 
-const WishList = ({ wishes, setWishes }) => {
+const WishList = ({ wishes, setWishes, filteredWishes }) => {
     return(
         <div className="wish-container">
             <ul className="wish-list">
-                {wishes.map((wish) => (
+                {filteredWishes.map((wish) => (
                     <Wish 
                         wishes={wishes}
                         setWishes={setWishes} 
