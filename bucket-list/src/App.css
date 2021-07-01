@@ -37,18 +37,18 @@
     background: #ff6f47;
     color: white;
   }
-  .todo-container {
+  .wish-container {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  .todo-list {
+  .wish-list {
     min-width: 30%;
     list-style: none;
   }
   
-  .todo {
+  .wish {
     margin: 0.5rem;
     background: white;
     font-size: 1.5rem;
@@ -58,10 +58,10 @@
     align-items: center;
     transition: all 1s ease;
   }
-  .filter-todo {
+  .filter-wish {
     padding: 1rem;
   }
-  .todo li {
+  .wish li {
     flex: 1;
   }
   
@@ -77,7 +77,7 @@
   .complete-btn {
     background: rgb(11, 212, 162);
   }
-  .todo-item {
+  .wish-item {
     padding: 0rem 0.5rem;
   }
   
