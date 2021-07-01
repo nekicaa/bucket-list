@@ -12,12 +12,15 @@ function App() {
         <h1>Nevena's summer bucket list</h1>
       </header>
       <WishForm 
-        input = {input}
+        input={input}
         wishes={wishes} 
         setWishes={setWishes} 
         setInput={setInput} 
       />
-      <WishList/>
+      <WishList
+        wishes={wishes}
+        setWishes={setWishes}
+      />
     </div>
   );
 }
