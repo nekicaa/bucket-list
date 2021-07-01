@@ -1,10 +1,30 @@
 import React from "react";
+import uuid from "uuid";
 
-const WishForm = () => {
+const WishForm = ({setInput, wishes, setWishes, input}) => {
+
+    const inputHandler = (e) => {
+        console.log(e.target.value);
+        setInput(e.target.value);
+    };
+
+    const submitWishHandler = (e) => {
+        e.preventDefault();
+        setWishes([
+            ...wishes, {text: input, completed: false, id: uuid.v4()}
+        ]);
+        setInput("");
+    };
+
     return(
         <form>
-            <input type="text" className="wish-input" />
-            <button className="wish-button" type="submit">
+            <input 
+                value={input} 
+                onChange={inputHandler} 
+                type="text" 
+                className="wish-input" 
+            />
+            <button onClick={submitWishHandler} className="wish-button" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
