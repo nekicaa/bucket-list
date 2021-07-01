@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Form from "./components/Form";
-
+import WishForm from "./components/WishForm";
+import WishList from "./components/WishList";
 
 function App() {
 
@@ -10,7 +10,8 @@ function App() {
       <header>
         <h1>Nevena's summer bucket list</h1>
       </header>
-      <Form />
+      <WishForm />
+      <WishList/>
     </div>
   );
 }

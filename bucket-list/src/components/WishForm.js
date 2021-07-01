@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = () => {
+const WishForm = () => {
     return(
         <form>
             <input type="text" className="wish-input" />
@@ -18,4 +18,4 @@ const Form = () => {
     );
 }
 
-export default Form;
+export default WishForm;
