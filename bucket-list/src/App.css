@@ -4,7 +4,11 @@
     box-sizing: border-box;
   }
   body {
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    /*background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);*/
+    background-image: url("swim.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
@@ -131,9 +135,4 @@
     cursor: pointer;
     pointer-events: none;
   }
-  /* Transition */
-  /*
-  .select:hover::after {
-    transform: scale(1.5);
-  }
-  */
+    

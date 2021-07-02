@@ -10,13 +10,18 @@ function App() {
   const [status, setStatus] = useState("all");
   const [filteredWishes, setFilteredWishes] = useState([]);
 
+  const LOCAL_STORAGE_KEY = "wishes";
+
   useEffect(() => {
     filteredHandler();
-    saveLocalWishes();
+    localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(wishes));
   }, [wishes, status]);
 
   useEffect(() => {
-    getLocalWishes();
+    const wishLocal = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if(wishLocal){
+      setWishes(wishLocal);
+    }
   }, [])
 
   const filteredHandler = () => {
@@ -30,19 +35,6 @@ function App() {
       default:
         setFilteredWishes(wishes);
         break;
-    }
-  };
-
-  //save local
-  const saveLocalWishes = () => {
-    localStorage.setItem("wishes",JSON.stringify(wishes));
-  };
-  const getLocalWishes = () => {
-    if(localStorage.getItem("wishes") === null){
-      localStorage.setItem("wishes",JSON.stringify([]));
-    }else{
-      let wishLocal = JSON.parse(localStorage.getItem("wishes"));
-      setWishes(wishLocal);
     }
   };
 
