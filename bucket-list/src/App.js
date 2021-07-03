@@ -3,6 +3,8 @@ import "./App.css";
 import WishForm from "./components/WishForm";
 import WishList from "./components/WishList";
 
+const LOCAL_STORAGE_KEY = "react-bucket-list-wishes";
+
 function App() {
 
   const [input, setInput] = useState("");
@@ -10,12 +12,13 @@ function App() {
   const [status, setStatus] = useState("all");
   const [filteredWishes, setFilteredWishes] = useState([]);
 
-  const LOCAL_STORAGE_KEY = "wishes";
-
   useEffect(() => {
     filteredHandler();
-    localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(wishes));
   }, [wishes, status]);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(wishes));
+  }, [wishes]);
 
   useEffect(() => {
     const wishLocal = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
